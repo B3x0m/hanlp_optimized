@@ -1,0 +1,42 @@
+{
+  "tag": {
+    "idx_to_token": [
+      "O",
+      "S-INTEGER",
+      "S-ORDINAL",
+      "S-LOCATION",
+      "S-DATE",
+      "S-ORGANIZATION",
+      "B-LOCATION",
+      "M-LOCATION",
+      "E-LOCATION",
+      "S-PERSON",
+      "S-MONEY",
+      "S-DURATION",
+      "B-ORGANIZATION",
+      "E-ORGANIZATION",
+      "S-TIME",
+      "M-ORGANIZATION",
+      "S-LENGTH",
+      "S-AGE",
+      "S-FREQUENCY",
+      "S-ANGLE",
+      "S-PHONE",
+      "S-PERCENT",
+      "S-FRACTION",
+      "S-WEIGHT",
+      "S-AREA",
+      "S-CAPACTITY",
+      "S-DECIMAL",
+      "S-MEASURE",
+      "S-SPEED",
+      "S-TEMPERATURE",
+      "S-POSTALCODE",
+      "S-RATE",
+      "S-WWW"
+    ],
+    "pad_token": null,
+    "unk_token": "O",
+    "mutable": false
+  }
+}
