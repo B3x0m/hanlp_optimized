@@ -132,9 +132,10 @@ def process_sentence(data, task_name=None, device=device):
     return output_dict
 
 filename = "./model/mtl/model.pt"
-tokenizer_path = "./tokenizer"
-# config_path = "./tokenizer/config.json"
-config_path = "./tokenizer/config.json"
+tokenizer_path = "./tokenizer/electra-base"
+# config_path = "./tokenizer/electra-small/config.json" # for electra-small
+# config_path = "./tokenizer/ernie-gram/config.json" # for ernie-gram
+config_path = "./tokenizer/electra-base/config.json" # for electra-base
 task_config_path = "./model/mtl/config.json"
 
 tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
@@ -174,7 +175,7 @@ for task_name, task in tasks.items():
     use_raw_hidden_states[task_name] = task.use_raw_hidden_states
 encoder.ret_raw_hidden_states = any(use_raw_hidden_states.values())
 model = MultiTaskModel(encoder, scalar_mixes, decoders, use_raw_hidden_states)
-model.load_state_dict(torch.load(filename, map_location=device), strict=False)
+model.load_state_dict(torch.load(filename, map_location=device, weights_only=True), strict=False)
 model.eval()
 model.to(device)
 
